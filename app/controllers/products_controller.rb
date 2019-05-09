@@ -13,4 +13,10 @@ class ProductsController < ApplicationController
     flash[:notice] = "成功加入購物車"
     redirect_to :back
   end
+
+  def clean
+    current_cart.clean!
+    flash[:warning] = "已清空購物車"
+    redirect_to carts_path
+  end
 end
