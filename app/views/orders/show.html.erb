@@ -63,17 +63,16 @@
 
     <div class="pull-left">
       <% if @order.order_placed? || @order.paid? %>
-        <%= link_to("申请取消订单", apply_to_cancel_order_path(@order.token), method: :post, class: "btn  btn-info") %>
-      <% end %>
+        <%= link_to("申請取消訂單", apply_to_cancel_order_path(@order.token), method: :post, class: "btn  btn-info") %>
     </div>
 
-    <% if !@order.is_paid? %>
+        <% if !@order.is_paid? %>
     <div class="group pull-right">
-      <%= link_to("以太幣付款", pay_with_eth_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
-    </div>
-    <% else %>
-      <p class="text-center">此訂單以完成付款</p>
+          <%= link_to("以太幣付款", pay_with_eth_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+      </div>
+        <% else %>
+          <p class="text-center">此訂單以完成付款</p>
+        <% end %>
     <% end %>
-
   </div>
 </div>
