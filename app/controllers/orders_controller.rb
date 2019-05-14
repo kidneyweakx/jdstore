@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
 
   def pay_with_eth
     @order = Order.find_by_token(params[:id])
-    @order.set_payment_with!("ETH")
+    @order.set_payment_with!("eth")
     @order.pay!
 
     redirect_to order_path(@order.token), notice: "使用以太幣完成付款"
