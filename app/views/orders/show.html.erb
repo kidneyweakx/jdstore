@@ -60,5 +60,13 @@
         </tr>
       </tbody>
     </table>
+    <% if !@order.is_paid? %>
+    <div class="group pull-right">
+      <%= link_to("以太幣付款", pay_with_eth_order_path(@order.token), :method => :post, :class => "btn btn-danger") %>
+    </div>
+    <% else %>
+      <p class="text-center">此訂單以完成付款</p>
+    <% end %>
+
   </div>
 </div>
