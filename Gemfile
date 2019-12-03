@@ -39,6 +39,8 @@ gem 'rails-erd'
 gem 'letter_opener', group: :development
 gem 'aasm'
 gem 'figaro'
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -61,5 +63,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
-  gem 'pg'
+ # gem 'pg'
 end
